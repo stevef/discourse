@@ -132,7 +132,7 @@ class UsersController < ApplicationController
 
 
   def create
-    return fake_success_response if suspicious? params
+    #return fake_success_response if suspicious? params
 
     user = User.new_from_params(params)
     auth = authenticate_user(user, params)
@@ -270,7 +270,7 @@ class UsersController < ApplicationController
 
     results = UserSearch.search term, topic_id
 
-    render json: { users: results.as_json(only: [ :username, :name, :use_uploaded_avatar, :upload_avatar_template, :uploaded_avatar_id],
+    render json: { users: results.as_json(only: [ :username, :use_uploaded_avatar, :upload_avatar_template, :uploaded_avatar_id],
                                           methods: :avatar_template) }
   end
 
