@@ -86,7 +86,7 @@ Discourse.UserAction = Discourse.Model.extend({
       post_number: '#' + this.get('reply_to_post_number'),
       user1Url: this.get('userUrl'),
       user2Url: this.get('targetUserUrl'),
-      another_user: this.get('target_name')
+      another_user: this.get('target_username')
     }));
 
   }.property('descriptionKey'),
